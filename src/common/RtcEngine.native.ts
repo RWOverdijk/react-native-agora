@@ -344,7 +344,7 @@ export default class RtcEngine implements RtcEngineInterface {
     token: string | undefined | null,
     channelName: string,
     optionalInfo: string | undefined | null,
-    optionalUid: number
+    optionalUid: number = 0
   ): Promise<void> {
     return RtcEngine._callMethod('joinChannel', {
       token,
@@ -2807,7 +2807,7 @@ interface RtcEngineInterface
     token: string | undefined | null,
     channelName: string,
     optionalInfo: string | undefined | null,
-    optionalUid: number
+    optionalUid?: number
   ): Promise<void>;
 
   switchChannel(
